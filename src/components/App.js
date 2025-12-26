@@ -8,16 +8,15 @@ const App = () => {
   function handleInput(e) {
     const digit = Number(e.target.value);
     if (!isNaN(digit)) {
-      setNumbers(prev => [...prev, digit]);
+      setNumbers(digit);
     }
   }
 
   useEffect(() => {
     const calculateSum=() => {
-      const total = numbers.reduce((acc, val) => acc + val, 0);
+      const total=numbers+sum;
       setSum(total);
     };
-
     calculateSum();
   }, [numbers]);
 

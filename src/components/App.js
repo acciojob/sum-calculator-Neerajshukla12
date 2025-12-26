@@ -1,25 +1,22 @@
-
 import React, { useState } from "react";
-import './../styles/App.css';
+import "./../styles/App.css";
 
 const App = () => {
+  const [sum, setSum] = useState(0);
 
-  const [sum,setSum]=useState(0);
-
-  function handleinput(e) {
-    let digit = +e.target.value;
-    setSum(pre=>pre+ digit)
+  function handleInput(e) {
+    const digit = Number(e.target.value);
+    setSum(prev => prev + digit);
   }
-
 
   return (
     <div>
       {/* Do not remove the main div */}
-      <h2>Sum Calculater</h2>
-      <input type="Number" onChange={handleinput} />
+      <h2>Sum Calculator</h2>
+      <input type="number" onChange={handleInput} />
       <p>{sum}</p>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
